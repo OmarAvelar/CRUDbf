@@ -10,9 +10,9 @@ const Home = () => (
         <button>Show me the Mortys</button>
         </Link>
 
-        <Link to="/api/authors" >
+        {/* <Link to="/api/authors" >
         <button>Agrega un Morty</button>
-        </Link>
+        </Link> */}
 
 
     </div>
