@@ -6,11 +6,11 @@ const Home = () => (
         <h1>
           Mike Ya camate pofavo
         </h1>
-        <Link>
+        <Link to="/api/authors" >
         <button>Show me the Mortys</button>
         </Link>
 
-        <Link>
+        <Link to="/api/authors" >
         <button>Agrega un Morty</button>
         </Link>
 
