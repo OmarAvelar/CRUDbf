@@ -2,6 +2,11 @@ const router = require('express').Router()
 const Author = require('../models/Author')
 const passport     = require('../helpers/passport')
 
+const isAuth = (req,res,next)=>{
+  if(req.isAuthenticated()) return next()
+  return res.status(403).json({message:'No puedes pasar!!'})
+}
+
 
 //Signup
 router.post('/signup', (req,res,next)=>{
@@ -25,7 +30,15 @@ router.post('/login', (req,res,next)=>{
 })
 
 //Logout
+router.get('/logout',(req,res,next)=>{
+  req.logOut()
+  res.status(201).json({message:'Logged out successfully'})
+})
+
 
 //Profile
+router.get('/profile', isAuth,(req,res,next)=>{
+  return res.status(201).json(req.user)
+})
 
 module.exports = router;
