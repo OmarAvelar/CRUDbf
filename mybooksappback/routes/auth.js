@@ -32,7 +32,7 @@ router.post('/login', (req,res,next)=>{
 //Logout
 router.get('/logout',(req,res,next)=>{
   req.logOut()
-  res.status(201).json({message:'Logged out successfully'})
+  res.status(200).json({message:'Logged out successfully'})
 })
 
 
